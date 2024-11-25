@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Gender extends StatefulWidget {
-  const Gender({super.key});
+class Gender extends StatelessWidget {
+  const Gender(
+      {super.key, required this.selectedGender, required this.onGenderChanged});
 
-  @override
-  State<Gender> createState() => _GenderState();
-}
-
-class _GenderState extends State<Gender> {
-
-  String? selectedGender;
+  final String? selectedGender;
+  final ValueChanged<String> onGenderChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +14,7 @@ class _GenderState extends State<Gender> {
         Expanded(
           child: Padding(
             padding:
-                const EdgeInsets.only(left: 20, top: 20, bottom: 20, right: 10),
+                const EdgeInsets.only(left: 20, top: 10, bottom: 20, right: 10),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.blueGrey.shade900,
@@ -37,14 +33,11 @@ class _GenderState extends State<Gender> {
                     style: TextStyle(fontSize: 24),
                   ),
                   Radio(
-                      focusColor: Colors.white,
                       activeColor: Colors.blue,
                       value: 'male',
                       groupValue: selectedGender,
                       onChanged: (value) {
-                        setState(() {
-                          selectedGender = value;
-                        });
+                        onGenderChanged(value!);
                       })
                 ],
               ),
@@ -54,7 +47,7 @@ class _GenderState extends State<Gender> {
         Expanded(
           child: Padding(
             padding:
-                const EdgeInsets.only(left: 10, top: 20, bottom: 20, right: 20),
+                const EdgeInsets.only(left: 10, top: 10, bottom: 20, right: 20),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.blueGrey.shade900,
@@ -77,9 +70,7 @@ class _GenderState extends State<Gender> {
                       value: 'female',
                       groupValue: selectedGender,
                       onChanged: (value) {
-                        setState(() {
-                          selectedGender = value;
-                        });
+                        onGenderChanged(value!);
                       })
                 ],
               ),

@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Height extends StatefulWidget {
-  const Height({super.key});
+class Height extends StatelessWidget {
+  const Height(
+      {super.key, required this.currentHeight, required this.onChangedHeight});
 
-  @override
-  State<Height> createState() => _HeightState();
-}
-
-class _HeightState extends State<Height> {
-  double height = 180;
+  final double currentHeight;
+  final ValueChanged<double> onChangedHeight;
 
   @override
   Widget build(BuildContext context) {
@@ -24,22 +21,18 @@ class _HeightState extends State<Height> {
             children: [
               const Text(
                 "Height",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 18),
               ),
               Text(
-                height.toInt().toString(),
+                "${currentHeight.toInt().toString()} cm",
                 style:
                     const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
               ),
               Slider(
-                value: height,
+                value: currentHeight,
                 min: 100,
                 max: 200,
-                onChanged: (value) {
-                  setState(() {
-                    height = value;
-                  });
-                },
+                onChanged: onChangedHeight,
                 activeColor: Colors.orange,
                 inactiveColor: Colors.black,
               )

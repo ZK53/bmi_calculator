@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Age extends StatefulWidget {
-  const Age({super.key});
+class Age extends StatelessWidget {
+  const Age({super.key, required this.age, required this.onAgeChanged});
 
-  @override
-  State<Age> createState() => _AgeState();
-}
-
-class _AgeState extends State<Age> {
-  int age = 18;
+  final int age;
+  final ValueChanged<int> onAgeChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -38,11 +34,7 @@ class _AgeState extends State<Age> {
                 children: [
                   IconButton(
                       onPressed: () {
-                        setState(() {
-                          if (age > 0) {
-                            age -= 1;
-                          }
-                        });
+                        onAgeChanged(age > 0 ? age - 1 : age);
                       },
                       icon: const Icon(
                         Icons.remove_circle,
@@ -51,9 +43,7 @@ class _AgeState extends State<Age> {
                       )),
                   IconButton(
                       onPressed: () {
-                        setState(() {
-                          age += 1;
-                        });
+                        onAgeChanged(age + 1);
                       },
                       icon: const Icon(
                         Icons.add_circle,

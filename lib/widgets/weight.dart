@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Weight extends StatefulWidget {
-  const Weight({super.key});
+class Weight extends StatelessWidget {
+  const Weight(
+      {super.key, required this.weight, required this.onWeightChanged});
 
-  @override
-  State<Weight> createState() => _WeightState();
-}
-
-class _WeightState extends State<Weight> {
-  int weight = 60;
+  final int weight;
+  final ValueChanged<int> onWeightChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +35,7 @@ class _WeightState extends State<Weight> {
                 children: [
                   IconButton(
                       onPressed: () {
-                        setState(() {
-                          weight -= 1;
-                        });
+                        onWeightChanged(weight > 0 ? weight - 1 : weight);
                       },
                       icon: const Icon(
                         Icons.remove_circle,
@@ -49,9 +44,7 @@ class _WeightState extends State<Weight> {
                       )),
                   IconButton(
                       onPressed: () {
-                        setState(() {
-                          weight += 1;
-                        });
+                        onWeightChanged(weight + 1);
                       },
                       icon: const Icon(
                         Icons.add_circle,
