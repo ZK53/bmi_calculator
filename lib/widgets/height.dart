@@ -31,7 +31,7 @@ class Height extends StatelessWidget {
               Slider(
                 value: currentHeight,
                 min: 100,
-                max: 200,
+                max: 250,
                 onChanged: onChangedHeight,
                 activeColor: Colors.orange,
                 inactiveColor: Colors.black,
