@@ -19,6 +19,9 @@ class Gender extends StatelessWidget {
                   left: 20, top: 10, bottom: 20, right: 10),
               child: Container(
                 decoration: BoxDecoration(
+                    border: selectedGender == 'male'
+                        ? Border.all(color: Colors.blue, width: 3)
+                        : null,
                     color: Colors.blueGrey.shade900,
                     borderRadius: BorderRadius.circular(15)),
                 height: 180,
@@ -58,6 +61,9 @@ class Gender extends StatelessWidget {
                   left: 10, top: 10, bottom: 20, right: 20),
               child: Container(
                 decoration: BoxDecoration(
+                    border: selectedGender == 'female'
+                        ? Border.all(color: Colors.pink, width: 3)
+                        : null,
                     color: Colors.blueGrey.shade900,
                     borderRadius: BorderRadius.circular(15)),
                 height: 180,
