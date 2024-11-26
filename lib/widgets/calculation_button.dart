@@ -7,15 +7,17 @@ class CalculationButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: const ButtonStyle(fixedSize: WidgetStatePropertyAll(Size(double.infinity, 100))),
+    return MaterialButton(
+        color: const Color.fromARGB(255, 255, 118, 76),
+        height: 90,
+        minWidth: double.infinity,
         onPressed: calculate,
         child: const Text(
           'CALCULATE BMI',
           style: TextStyle(
-              fontSize: 40,
-              color: Colors.black,
-              backgroundColor: Colors.deepOrange),
+            fontSize: 40,
+            color: Colors.black,
+          ),
         ));
   }
 }

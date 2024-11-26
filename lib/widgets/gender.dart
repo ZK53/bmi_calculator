@@ -12,67 +12,79 @@ class Gender extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: Padding(
-            padding:
-                const EdgeInsets.only(left: 20, top: 10, bottom: 20, right: 10),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.blueGrey.shade900,
-                  borderRadius: BorderRadius.circular(15)),
-              height: 170,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  const Icon(
-                    Icons.male,
-                    size: 50,
-                    color: Colors.blue,
-                  ),
-                  const Text(
-                    "male",
-                    style: TextStyle(fontSize: 24),
-                  ),
-                  Radio(
-                      activeColor: Colors.blue,
-                      value: 'male',
-                      groupValue: selectedGender,
-                      onChanged: (value) {
-                        onGenderChanged(value!);
-                      })
-                ],
+          child: GestureDetector(
+            onTap: () => onGenderChanged('male'),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  left: 20, top: 10, bottom: 20, right: 10),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.blueGrey.shade900,
+                    borderRadius: BorderRadius.circular(15)),
+                height: 180,
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(
+                        Icons.male,
+                        size: 90,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    Text(
+                      "Male",
+                      style: TextStyle(fontSize: 24),
+                    ),
+                    // Radio(
+                    //     activeColor: Colors.blue,
+                    //     value: 'male',
+                    //     groupValue: selectedGender,
+                    //     onChanged: (value) {
+                    //       onGenderChanged(value!);
+                    //     })
+                  ],
+                ),
               ),
             ),
           ),
         ),
         Expanded(
-          child: Padding(
-            padding:
-                const EdgeInsets.only(left: 10, top: 10, bottom: 20, right: 20),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.blueGrey.shade900,
-                  borderRadius: BorderRadius.circular(15)),
-              height: 170,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  const Icon(
-                    Icons.female,
-                    size: 50,
-                    color: Colors.pink,
-                  ),
-                  const Text(
-                    "female",
-                    style: TextStyle(fontSize: 24),
-                  ),
-                  Radio(
-                      activeColor: Colors.blue,
-                      value: 'female',
-                      groupValue: selectedGender,
-                      onChanged: (value) {
-                        onGenderChanged(value!);
-                      })
-                ],
+          child: GestureDetector(
+            onTap: () => onGenderChanged('female'),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  left: 10, top: 10, bottom: 20, right: 20),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.blueGrey.shade900,
+                    borderRadius: BorderRadius.circular(15)),
+                height: 180,
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(
+                        Icons.female,
+                        size: 100,
+                        color: Colors.pink,
+                      ),
+                    ),
+                    Text(
+                      "Female",
+                      style: TextStyle(fontSize: 24),
+                    ),
+                    // Radio(
+                    //     activeColor: Colors.blue,
+                    //     value: 'female',
+                    //     groupValue: selectedGender,
+                    //     onChanged: (value) {
+                    //       onGenderChanged(value!);
+                    //     })
+                  ],
+                ),
               ),
             ),
           ),

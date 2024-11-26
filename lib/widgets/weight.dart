@@ -17,7 +17,7 @@ class Weight extends StatelessWidget {
           decoration: BoxDecoration(
               color: Colors.blueGrey.shade900,
               borderRadius: BorderRadius.circular(15)),
-          height: 170,
+          height: 180,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -28,10 +28,10 @@ class Weight extends StatelessWidget {
               Text(
                 weight.toString(),
                 style:
-                    const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                    const TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   IconButton(
                       onPressed: () {
@@ -39,7 +39,7 @@ class Weight extends StatelessWidget {
                       },
                       icon: const Icon(
                         Icons.remove_circle,
-                        size: 30,
+                        size: 35,
                         color: Colors.orange,
                       )),
                   IconButton(
@@ -48,7 +48,7 @@ class Weight extends StatelessWidget {
                       },
                       icon: const Icon(
                         Icons.add_circle,
-                        size: 30,
+                        size: 35,
                         color: Colors.orange,
                       ))
                 ],
